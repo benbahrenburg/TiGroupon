@@ -36,9 +36,21 @@ var wMain = Ti.UI.createWindow({
 	navBarHidden : (Ti.Platform.name == 'android') 
 });
 
+var wTable = Ti.UI.createWindow({  
+    title:'TiGroupon',
+    backgroundColor:'#ebd077',
+    barColor:'#76A045',
+    tabBarHidden:false,
+        url:'Modules/list_ui.js'
+//      navBarHidden : (Ti.Platform.name != 'android') 
+});
+
+
 if(Ti.Platform.name!='android'){
 	var tab1 = Ti.UI.createTab({window:wMain});
-	tabGroup.addTab(tab1);  
+	var tab2 = Ti.UI.createTab({window:wTable});
+    tabGroup.addTab(tab1); 
+    tabGroup.addTab(tab2); 
 	// open tab group
 	tabGroup.open();	
 }else{
