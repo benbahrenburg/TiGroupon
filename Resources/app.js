@@ -1,38 +1,47 @@
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
-Titanium.UI.setBackgroundColor('#fff');
+Ti.UI.setBackgroundColor('#fff');
 
 // Add in Ti.APP methods for isAndroid
 
-function noNetworkAlert() {
-    Ti.App.fireEvent('hide_indicator',{});
-  	Ti.UI.createAlertDialog({
-  	  title:Ti.Locale.getString('twitter_no_network_title'),
-  	  message:Ti.Locale.getString('twitter_no_network_msg')
-  	}).show();	
-};
-
-function isAndroid(){
-	return (Ti.Platform.name == 'android');
+Ti.App.myTools ={};
+Ti.App.myTools = {
+	isAndroid : function(){
+		return (Ti.Platform.name == 'android');
+	},
+	noNetworkAlertMsg : function(){
+	  	Ti.UI.createAlertDialog({
+	  	  title:'No Network',
+	  	  message:'Unable to find a network, please try again'
+	  	}).show();		
+	},
+	customMsg : function(inputTitle,inputMsg){
+	  	Ti.UI.createAlertDialog({
+	  	  title:inputTitle,
+	  	  message:inputMsg
+	  	}).show();		
+	}
 };
 
 // create tab group
-var tabGroup = Titanium.UI.createTabGroup();
+var tabGroup = Ti.UI.createTabGroup();
 //
 // create base UI tab and root window
 //
-var win1 = Titanium.UI.createWindow({  
+var wMain = Ti.UI.createWindow({  
     title:'TiGroupon',
     backgroundColor:'#ebd077',
-    barColor:'#76A045'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
-    window:win1
+    barColor:'#76A045',
+    tabBarHidden:true,
+	url:'Modules/main_ui.js'
+//	navBarHidden : (Ti.Platform.name != 'android') 
 });
 
+if(Ti.Platform.name!='android'){
+	var tab1 = Ti.UI.createTab({window:wMain});
+	tabGroup.addTab(tab1);  
+	// open tab group
+	tabGroup.open();	
+}else{
+	wMain.open();
+}
 
-tabGroup.addTab(tab1);  
-
-// open tab group
-tabGroup.open();
