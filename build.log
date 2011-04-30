@@ -1,0 +1,23 @@
+Logfile initialized
+[INFO] logfile = /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build.log
+[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/builder.py simulator "TiGroupon" "/Users/benjamin/androidSDK" "/Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon" "com.appworkbench.groupon" "4" "HVGA"
+[INFO] Building TiGroupon for Android ... one moment
+[INFO] Titanium SDK version: 1.7.0 (04/29/11 22:26 c919243...)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.014246 seconds on emulator to get ready
+[DEBUG] com.appworkbench.groupon installed? True
+[INFO] Copying project resources..
+[TRACE] COPYING CREATED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Images/Buttons/black.png => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Images/Buttons/black.png
+[TRACE] COPYING CREATED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Images/Buttons/black_pressed.png => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Images/Buttons/black_pressed.png
+[TRACE] COPYING CREATED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Images/Buttons/light_search.png => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Images/Buttons/light_search.png
+[TRACE] COPYING CREATED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Images/Buttons/light_search@2x.png => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Images/Buttons/light_search@2x.png
+[TRACE] COPYING MODIFIED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Modules/main_ui.js => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Modules/main_ui.js
+[INFO] Tiapp.xml unchanged, skipping class generation
+[DEBUG] Processing Android resource drawables
+[INFO] Re-launching application ... TiGroupon
+[INFO] Launching application ... TiGroupon
+[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.appworkbench.groupon/.TigrouponActivity }
+Warning: Activity not started, its current task has been brought to the front
+

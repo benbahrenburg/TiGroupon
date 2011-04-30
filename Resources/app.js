@@ -32,8 +32,8 @@ var wMain = Ti.UI.createWindow({
     backgroundColor:'#ebd077',
     barColor:'#76A045',
     tabBarHidden:true,
-	url:'Modules/main_ui.js'
-//	navBarHidden : (Ti.Platform.name != 'android') 
+	url:'Modules/main_ui.js',
+	navBarHidden : (Ti.Platform.name == 'android') 
 });
 
 if(Ti.Platform.name!='android'){
