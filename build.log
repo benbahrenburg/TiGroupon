@@ -6,14 +6,9 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.014246 seconds on emulator to get ready
+[DEBUG] waited 0.020961 seconds on emulator to get ready
 [DEBUG] com.appworkbench.groupon installed? True
 [INFO] Copying project resources..
-[TRACE] COPYING CREATED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Images/Buttons/black.png => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Images/Buttons/black.png
-[TRACE] COPYING CREATED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Images/Buttons/black_pressed.png => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Images/Buttons/black_pressed.png
-[TRACE] COPYING CREATED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Images/Buttons/light_search.png => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Images/Buttons/light_search.png
-[TRACE] COPYING CREATED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Images/Buttons/light_search@2x.png => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Images/Buttons/light_search@2x.png
-[TRACE] COPYING MODIFIED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Modules/main_ui.js => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Modules/main_ui.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
 [INFO] Re-launching application ... TiGroupon
@@ -21,3 +16,5 @@ Logfile initialized
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.appworkbench.groupon/.TigrouponActivity }
 Warning: Activity not started, its current task has been brought to the front
 
+[INFO] Relaunched TiGroupon ... Application should be running.
+[INFO] Android Emulator has exited
