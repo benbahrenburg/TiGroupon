@@ -8,13 +8,10 @@ tg.txtLocation.addEventListener('return', function(){
 
 tg.mapview.addEventListener('click', function(evt) {
 	var dealUrl='';
-//	Ti.API.info('map=' + JSON.stringify(evt));
-//	Ti.API.info('title' + evt.title);
 	if(Ti.App.myTools.isAndroid()){
 		dealUrl=tg.getUrlFromDeals(evt.title);
 	}else{
 	    //is rightbutton clicked?
-		Ti.API.info('evt.clicksource=' + evt.clicksource);
 	    if (evt.clicksource == 'rightButton') {
 			dealUrl=evt.annotation.dealUrl;
 	    }		
