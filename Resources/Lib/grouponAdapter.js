@@ -1,15 +1,28 @@
 function fetchGroupon(apiKey){
  
   this.getDivisions=function(){
+  	//TODO Add API lookup function
   };
 
   this.getNearbyDivisions=function(lat,lng){
-  
+  	//TODO Add API lookup function
   };
-  
-  this.getDeals=function(){
+    
+  function calculateDistance(startingLat,startingLng,destLat,destLng){
+
+	var R = 6371; // km  
+	var dLat = (destLat-startingLat)*Math.PI/180;  
+	var dLon = (destLng-startingLng)*Math.PI/180;   
+	var a = Math.sin(dLat/2) * Math.sin(dLat/2) +  
+	        Math.cos(startingLat*Math.PI/180) * Math.cos(destLat*Math.PI/180) *   
+	        Math.sin(dLon/2) * Math.sin(dLon/2);   
+	var c = 2 * Math.asin(Math.sqrt(a));   
+	var distance = R * c; //In KM
+
+	return distance;
+	
   };
-  
+
   function buildNearbyDealsQry(lat,lng,radius){
 	var qryUrl = 'http://api.groupon.com/v2/deals.json?client_id=' + apiKey + '&lat=' + lat + '&lng=' + lng + '&radius=' + radius;
 	Ti.API.info('Lookup url=' + qryUrl);
@@ -20,7 +33,6 @@ function fetchGroupon(apiKey){
   	var results = {success:true,deals:[]};
 
 	try{
-		Ti.API.info('in getNearbyDeals');
 		var query = buildNearbyDealsQry(lat,lng,radius);
 		var done = false;
 		var xhr = Ti.Network.createHTTPClient();
@@ -29,7 +41,6 @@ function fetchGroupon(apiKey){
 				// convert the response JSON text into a JavaScript object
 				var apiResults = eval('(' + this.responseText + ')');
 				done=true;
-//				Ti.API.info('apiResults=' + JSON.stringify(apiResults));
 				var dealCount=apiResults.deals.length;
 				for (iLoop=0;iLoop < dealCount;iLoop++){
 					var currentDeal = {
@@ -44,22 +55,24 @@ function fetchGroupon(apiKey){
 						endAt : apiResults.deals[iLoop].endAt,
 						dealUrl	: apiResults.deals[iLoop].dealUrl
 					};
-						
-						var locCount =apiResults.deals[iLoop].options[0].redemptionLocations.length;
+						//Big assumption that options are returned
+						// TODO need to add validation checks here						
 						//if there are more then one location just take the first
-						if(locCount>0){
+						// TODO need to add radius check here so that we pick the nearest location
+						if(apiResults.deals[iLoop].options[0].redemptionLocations.length>0){
 							currentDeal.lat=apiResults.deals[iLoop].options[0].redemptionLocations[0].lat;
 							currentDeal.lng=apiResults.deals[iLoop].options[0].redemptionLocations[0].lng;
 						}
-					
+						
+					currentDeal.distance = calculateDistance(lat,lng,currentDeal.lat,currentDeal.lng);
 					results.deals.push(currentDeal);
 				}
 
-//				Ti.API.info('results=' + JSON.stringify(results));
 				if(callback!=undefined){
 					callback(results); //Callback					
+				}else{
+					throw "no callback function provided";
 				}
-
 			}	
 		};
 		xhr.onerror = function(e){
