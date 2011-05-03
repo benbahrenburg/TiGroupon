@@ -7,13 +7,6 @@ Ti.App.myTools = {
 	isAndroid : function(){
 		return (Ti.Platform.name == 'android');
 	},
-	noNetworkAlertMsg : function(){
-	  	Ti.UI.createAlertDialog({
-	  	  title:'No Network',
-	  	  message:'Unable to find a network, please try again'
-	  	}).show();
-		return;
-	},
 	isEmpty : function(value){
 		if(value==undefined){
 			return true;
@@ -33,7 +26,7 @@ var wMain = Ti.UI.createWindow({
     backgroundColor:'#ebd077',
     barColor:'#76A045',
     tabBarHidden:true,
-	url:'Modules/main_ui.js',
+	url:'Screens/main_ui.js',
 	fullscreen:false,
 	navBarHidden : (Ti.Platform.name == 'android') 
 });

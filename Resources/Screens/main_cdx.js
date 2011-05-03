@@ -73,17 +73,19 @@ tg.grouponCallback=function(e){
 	var dealAnnotations = [];
 
 	if (!e.success){
-		alert('error');
+		Ti.UI.createAlertDialog({
+			title:'Error',
+			message:"We're sorry, we had an issue finding your Groupon information. Please try again in alittle while."
+		}).show();
 		return;
 	}
 	
-	tg.mapview.removeAllAnnotations();
+	tg.mapview.removeAllAnnotations(); //Remove any pins we might have
 	
 	tg.deals=e.deals; //Save for later
-	//Start adding 
-	var dealCount=tg.deals.length;
-
+	var dealCount=tg.deals.length; //Get the length so we don't query each time
 	
+	//Start adding map pins	
 	for (iLoop=0;iLoop < dealCount;iLoop++){
 		tg.mapview.addAnnotation(tg.getMapAnnotate(e.deals[iLoop].lat,
 						  e.deals[iLoop].lng,
@@ -156,6 +158,7 @@ tg.buildRows=function(inputTitle,inputSummary,detailUrl){
 tg.setDataInfo=function(){
 	var table = [];
 	var dealCount=tg.deals.length;
+	//Build a list of the details
 	for (iLoop=0;iLoop < dealCount;iLoop++){
 		table.push(tg.buildRows(tg.deals[iLoop].title,tg.deals[iLoop].summary,tg.deals[iLoop].dealUrl));
 	}
@@ -163,7 +166,6 @@ tg.setDataInfo=function(){
 };
 
 tg.googleCallback=function(e){
-	Ti.API.info('hopefully ' + e.results[0].formatted_address);
 	//Ti.API.info("stuff from google = "+JSON.stringify(e));
 	if (e.results.length>0) {
 			tg.txtLocation.value = e.results[0].formatted_address;
@@ -176,9 +178,6 @@ tg.googleCallback=function(e){
 };
 tg.googleGeo=function(latitude,longitude,callback){
 	try{
-		Ti.API.info('latitude=' + latitude);
-		Ti.API.info('longitude=' + longitude);
-		Ti.API.info('Google Provider lookup called');
 		var query = "http://maps.google.com/maps/api/geocode/json?latlng="+ latitude +"," + longitude + "&sensor=false";
 		var done = false;
 		var xhr = Ti.Network.createHTTPClient();
@@ -191,30 +190,29 @@ tg.googleGeo=function(latitude,longitude,callback){
 			}	
 		};
 		xhr.onerror = function(e){
-			Ti.API.info('>>>>> Error calling Google ' + e.error );
-			geo.geoTraceLog('ERROR','GoogleReverseGeo','Service Error=' + err);
+			Ti.API.info('>>>>> Error googleGeo Google ' + e.error );
 			Ti.App.fireEvent('geo_error');
 		};			
       xhr.open('GET',query);
   	  xhr.send();
 	 } catch(err) {
-	  	Ti.API.info('>>>>>>> Error In performGoogleReverse ' + err );
-		myt.geo.geoTraceLog('ERROR','GoogleReverseGeo','Service Error=' + err);
+	  	Ti.API.info('>>>>>>> Error In googleGeo ' + err );
 	}
 };
 
 tg.locationChangeCallback=function(e){
 	try{
-
+		//If no network connection display message
 		if(!Ti.Network.online){
 			tg.txtLocation.value="No address found";
 			tg.hasLocation=false;
 			Ti.UI.createAlertDialog({
-				title:'No Netowkr',
+				title:'No Network',
 				message:"We're sorry, we didn't have time to build an offline experience."
 			}).show();
 			return;
 		}
+		//Stop if we hit an error
 		if (!e.success || e.error){
 			Ti.API.error('Error In Geo Callback ' + e.error);
 			Ti.App.fireEvent('hide_indicator',{});
@@ -223,33 +221,16 @@ tg.locationChangeCallback=function(e){
 
 		var latitude=e.coords.latitude; //GPS
 		var longitude=e.coords.longitude; //GPS
+		//Print the coordinates for debugging
 		Ti.API.info('latitude=' + latitude);
 		Ti.API.info('longitude=' + longitude);
+		//Set the map to your correct location
 		tg.mapview.setLocation({latitude:latitude,longitude:longitude,animate:true,latitudeDelta:0.04, longitudeDelta:0.04});
-		
+		//Using our coordinates search for Groupon deals within a radius of 10 miles
 		tg.grouponLookup.getNearbyDeals(latitude,longitude,10,tg.grouponCallback); //Find deals
-
+		//Call Google for location details to display in the location textfield
 		tg.googleGeo(latitude,longitude,tg.googleCallback);
 		
-//		Ti.Geolocation.reverseGeocoder(latitude,longitude,function(evt){
-//			Ti.App.fireEvent('hide_indicator',{});
-//			if (evt.success) {
-//				Ti.API.info("reverse geolocation result = "+JSON.stringify(evt));
-//				var places = evt.places;
-//				if (places && places.length) {
-//					tg.txtLocation.value = places[0].address;
-//				} else {
-//					tg.txtLocation.value="No address found";
-//				}
-//				tg.txtLocation.blur();
-//			}
-//			else {
-//				Ti.UI.createAlertDialog({
-//					title:'Reverse geo error',
-//					message:evt.error
-//				}).show();					
-//			}
-//		});
 	 } catch(err) {
 	  	Ti.API.info('>>>>>>> Error In location callback ' + err );
 	}	

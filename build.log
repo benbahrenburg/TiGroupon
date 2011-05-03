@@ -6,15 +6,69 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.020961 seconds on emulator to get ready
-[DEBUG] com.appworkbench.groupon installed? True
+[DEBUG] waited 0.022716 seconds on emulator to get ready
+[DEBUG] com.appworkbench.groupon installed? False
 [INFO] Copying project resources..
+[TRACE] COPYING MODIFIED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Screens/main_cdx.js => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Screens/main_cdx.js
+[TRACE] COPYING MODIFIED FILE: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/Resources/Screens/main_evt.js => /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/assets/Resources/Screens/main_evt.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
-[INFO] Re-launching application ... TiGroupon
+[DEBUG] creating unsigned apk: /Users/benjamin/Projects/TitaniumDev/Demos/TiGroupon/build/android/bin/app-unsigned.apk
+[DEBUG] from resource zip => assets/Resources/Images/Buttons/black.png
+[DEBUG] from resource zip => assets/Resources/Images/Buttons/black_pressed.png
+[DEBUG] from resource zip => assets/Resources/Images/Buttons/light_globe.png
+[DEBUG] from resource zip => assets/Resources/Images/Buttons/light_list.png
+[DEBUG] from resource zip => assets/Resources/Images/Buttons/light_locate.png
+[DEBUG] from resource zip => assets/Resources/Images/Buttons/light_more.png
+[DEBUG] from resource zip => assets/Resources/Images/Buttons/light_search.png
+[DEBUG] from resource zip => assets/Resources/Images/Buttons/light_search@2x.png
+[DEBUG] from resource zip => assets/Resources/Images/map-pin.png
+[DEBUG] from resource zip => assets/Resources/Images/row_effect.png
+[DEBUG] from resource zip => assets/Resources/Lib/grouponAdapter.js
+[DEBUG] from resource zip => assets/Resources/Screens/about_ui.js
+[DEBUG] from resource zip => assets/Resources/Screens/about_ui.jss
+[DEBUG] from resource zip => assets/Resources/Screens/main_cdx.js
+[DEBUG] from resource zip => assets/Resources/Screens/main_evt.js
+[DEBUG] from resource zip => assets/Resources/Screens/main_ui.js
+[DEBUG] from resource zip => assets/Resources/Screens/main_ui.jss
+[DEBUG] from resource zip => assets/Resources/Default.png
+[DEBUG] from resource zip => assets/Resources/Icon.png
+[DEBUG] from resource zip => assets/Resources/app.js
+[DEBUG] from resource zip => assets/Resources/appicon.png
+[DEBUG] from resource zip => assets/Resources/config.js
+[DEBUG] from resource zip => assets/tiapp.xml
+[DEBUG] from resource zip => res/drawable/appicon.png
+[DEBUG] from resource zip => res/drawable/background.png
+[DEBUG] from resource zip => res/layout/titanium_tabgroup.xml
+[DEBUG] from resource zip => AndroidManifest.xml
+[DEBUG] from resource zip => resources.arsc
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/apache/Commons-NOTICE.txt
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/apache/HttpComponents-NOTICE.txt
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/apache/mime4j-NOTICE.txt
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/build.properties
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/background.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_18.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_48.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_18.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_48.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_normal.9.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_pressed.9.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_selected.9.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/default_icon.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/titanium.jar => org/appcelerator/titanium/res/drawable/photoDefault.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/smalljs.jar => org/mozilla/javascript/resources/Messages.properties
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/smalljs.jar => org/mozilla/javascript/resources/Messages_fr.properties
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.js
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.min.js
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.7.0.20110430/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/json2.js
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.013601 seconds on emulator to get ready
+[INFO] Installing application on device
 [INFO] Launching application ... TiGroupon
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.appworkbench.groupon/.TigrouponActivity }
-Warning: Activity not started, its current task has been brought to the front
 
-[INFO] Relaunched TiGroupon ... Application should be running.
-[INFO] Android Emulator has exited
+[INFO] Deployed TiGroupon ... Application should be running.

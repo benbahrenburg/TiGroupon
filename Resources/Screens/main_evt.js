@@ -9,6 +9,8 @@ tg.txtLocation.addEventListener('return', function(){
 tg.mapview.addEventListener('click', function(evt) {
 	var dealUrl='';
 	if(Ti.App.myTools.isAndroid()){
+		//Properties are different on Android so 
+		//lookup using pin title
 		dealUrl=tg.getUrlFromDeals(evt.title);
 	}else{
 	    //is rightbutton clicked?
