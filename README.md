@@ -1,9 +1,9 @@
-GroupR
+## GroupR
 
 This is both a sample App and one of the entries at MobileDevCamp NYC.
 
-To Use
-You will need to get an API key from Groupon their developer site at http://www.groupon.com/pages/api.
+## To Use
+You will need to get an API key from Groupon their developer site [here](http://www.groupon.com/pages/api).
 
 After getting your API key add it to the config.js in Resources.
 
