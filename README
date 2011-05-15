@@ -1,9 +1,9 @@
-Welcome to your Appcelerator Titanium Mobile Project
+##GroupR
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+This is both a sample App and one of the entries at MobileDevCamp NYC.
 
-
+##To Use
+You will need to get an API key from Groupon their developer site [here](http://www.groupon.com/pages/api).
 
 ----------------------------------
 Stuff our legal folk make us say:
